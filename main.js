@@ -1,4 +1,4 @@
-const API_KEY = config.API_KEY
+require('dotenv').config()
 
 let weather = {
     fetchWeather: function (city) {
@@ -6,7 +6,7 @@ let weather = {
         "http://api.openweathermap.org/data/2.5/weather?q=" +
           city +
           "&appid=" +
-           API_KEY +
+           process.env.API_KEY +
           "&units=metric"
       )
         .then((response) => response.json())
